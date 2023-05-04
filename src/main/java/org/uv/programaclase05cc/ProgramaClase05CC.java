@@ -5,6 +5,8 @@
 package org.uv.programaclase05cc;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -13,8 +15,9 @@ import java.util.List;
 public class ProgramaClase05CC {
 
     public static void main(String[] args) {
-        //Session session=HibernateUtil.getSession();
+        
         DAOEmpleado dao=new DAOEmpleado();
+/**
 //        
 //        Empleado empleado=new Empleado();
 //        empleado.setDireccion("Avenida1");
@@ -43,10 +46,11 @@ public class ProgramaClase05CC {
 //        System.out.println(emp2.getNombre()+"\n"+emp2.getDireccion());
 
         //FindAll
+**/
         List<Empleado> empleados=dao.findAll();
         
         for (Empleado empleado : empleados) {
-            System.out.println(empleado.getNombre()+"\n"+empleado.getDireccion()+"\n");
+            Logger.getLogger(ProgramaClase05CC.class.getName()).log(Level.SEVERE, null, empleado.getNombre()+"\n"+empleado.getDireccion()+"\n");
         }
     }
 }
